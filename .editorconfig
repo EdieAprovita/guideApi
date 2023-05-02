@@ -1,0 +1,33 @@
+# top-most EditorConfig file
+root = true
+
+# Configuración para todos los archivos
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Configuración específica para TypeScript
+[*.ts]
+# Espacio después de la coma en la lista de argumentos de la función
+function_declaration_parameters_space = true
+# Espacio antes y después de los corchetes en la definición de una función
+function_type_declaration_space = true
+# Usar la sintaxis "camelCase" para los nombres de variables y funciones
+camel_case_variables = true
+# Espacio después de los dos puntos en la definición de una propiedad de objeto
+object_property_type_spacing = true
+
+# Configuración específica para Next.js
+[**/*.js]
+# Usar dos espacios como sangría
+indent_size = 2
+# Deshabilitar la detección automática de la sangría
+indent_style = space
+# Usar la sintaxis "camelCase" para los nombres de variables y funciones
+camel_case_variables = true
+# Ignorar los espacios en blanco al final de las líneas
+trim_trailing_whitespace = false
