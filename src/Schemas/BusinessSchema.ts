@@ -1,5 +1,5 @@
-import { Schema, model, Types } from "mongoose";
-import { IBusiness, Budget, TypeDish, TypePlace, Difficulty } from "../Types/Types";
+import { Schema, model } from "mongoose";
+import { IBusiness, Budget } from "../Types/Types";
 
 const BusinessSchema = new Schema<IBusiness>({
 	namePlace: {
