@@ -1,18 +1,18 @@
 import { Types } from "mongoose";
 
-enum Role {
+export enum Role {
 	ADMIN = "ADMIN",
 	USER = "USER",
 	PROFESSIONAL = "PROFESSIONAL",
 }
 
-enum Budget {
+export enum Budget {
 	LOW = "LOW",
 	MEDIUM = "MEDIUM",
 	HIGH = "HIGH",
 }
 
-enum TypeDish {
+export enum TypeDish {
 	"BREAKFAST" = "BREAKFAST",
 	"LUNCH" = "LUNCH",
 	"DINNER" = "DINNER",
@@ -20,12 +20,12 @@ enum TypeDish {
 	"DESSERT" = "DESSERT",
 }
 
-enum TypePlace {
+export enum TypePlace {
 	"RESTAURANT" = "RESTAURANT",
 	"STREETFOOD" = "STREETFOOD",
 }
 
-enum Difficulty {
+export enum Difficulty {
 	"EASY" = "EASY",
 	"MEDIUM" = "MEDIUM",
 	"HARD" = "HARD",
@@ -37,7 +37,10 @@ export interface IUser {
 	email: string;
 	role: Role;
 	photo: string;
-	timestamps: Date;
+	timestamps: {
+		createdAt: Date;
+		updatedAt: Date;
+	};
 }
 
 export interface IReview {
@@ -58,9 +61,9 @@ export interface IBusiness {
 	author: Types.ObjectId;
 	address: string;
 	image: string;
-	constact: [
+	contact: [
 		{
-			phone: string;
+			phone: number;
 			facebook?: string;
 			instagram?: string;
 			email?: string;
