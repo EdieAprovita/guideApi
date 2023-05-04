@@ -113,7 +113,7 @@ export interface IMarket {
 	author: Types.ObjectId;
 	address: string;
 	image: string;
-	typeMarket: string;
+	typeMarket: TypeMarket;
 	reviews: [IReview];
 	rating: number;
 	numReviews: number;
@@ -159,7 +159,7 @@ export interface IRecipe {
 	reviews: [IReview];
 	rating: number;
 	numReviews: number;
-	budget: string;
+	budget: Budget;
 	timestamps: {
 		createdAt: Date;
 		updatedAt: Date;
