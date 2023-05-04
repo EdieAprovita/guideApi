@@ -13,22 +13,27 @@ export enum Budget {
 }
 
 export enum TypeDish {
-	"BREAKFAST" = "BREAKFAST",
-	"LUNCH" = "LUNCH",
-	"DINNER" = "DINNER",
-	"SNACK" = "SNACK",
-	"DESSERT" = "DESSERT",
+	BREAKFAST = "BREAKFAST",
+	LUNCH = "LUNCH",
+	DINNER = "DINNER",
+	SNACK = "SNACK",
+	DESSERT = "DESSERT",
 }
 
 export enum TypePlace {
-	"RESTAURANT" = "RESTAURANT",
-	"STREETFOOD" = "STREETFOOD",
+	RESTAURANT = "RESTAURANT",
+	STREETFOOD = "STREETFOOD",
+}
+
+export enum TypeMarket {
+	SUPERMARKET = "SUPERMARKET",
+	STREETMARKET = "STREETMARKET",
 }
 
 export enum Difficulty {
-	"EASY" = "EASY",
-	"MEDIUM" = "MEDIUM",
-	"HARD" = "HARD",
+	EASY = "EASY",
+	MEDIUM = "MEDIUM",
+	HARD = "HARD",
 }
 
 export interface IUser {
@@ -85,7 +90,7 @@ export interface IMedic {
 	address: string;
 	image: string;
 	speciality: string;
-	constact: [
+	contact: [
 		{
 			phone: string;
 			facebook?: string;

@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
-import { IBusiness, Budget, IReview } from "../Types/Types";
+import { IMedic, IReview } from "../Types/Types";
 
-const BusinessSchema = new Schema<IBusiness>({
-	namePlace: {
+const MedicSchema = new Schema<IMedic>({
+	doctorName: {
 		type: String,
 		required: true,
 	},
@@ -18,6 +18,10 @@ const BusinessSchema = new Schema<IBusiness>({
 	image: {
 		type: String,
 	},
+	speciality: {
+		type: String,
+		required: true,
+	},
 	contact: [
 		{
 			phone: {
@@ -30,17 +34,22 @@ const BusinessSchema = new Schema<IBusiness>({
 			instagram: {
 				type: String,
 			},
+			email: {
+				type: String,
+				required: true,
+			},
 		},
 	],
-	budget: {
-		type: String,
-		enum: [Budget.LOW, Budget.MEDIUM, Budget.HIGH],
-		required: true,
-	},
 	reviews: [] as IReview[],
 	rating: {
 		type: Number,
 		default: 0,
+		required: true,
+	},
+	numReviews: {
+		type: Number,
+		default: 0,
+		required: true,
 	},
 	timestamps: {
 		createdAt: {
@@ -56,4 +65,4 @@ const BusinessSchema = new Schema<IBusiness>({
 	},
 });
 
-export const BusinessModel = model<IBusiness>("Business", BusinessSchema);
+export const Medic = model<IMedic>("Medic", MedicSchema);

@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
-import { IBusiness, Budget, IReview } from "../Types/Types";
+import { IMarket, IReview, TypeMarket } from "../Types/Types";
 
-const BusinessSchema = new Schema<IBusiness>({
-	namePlace: {
+const MarketSchema = new Schema<IMarket>({
+	marketName: {
 		type: String,
 		required: true,
 	},
@@ -17,30 +17,23 @@ const BusinessSchema = new Schema<IBusiness>({
 	},
 	image: {
 		type: String,
+		required: true,
 	},
-	contact: [
-		{
-			phone: {
-				type: Number,
-				required: true,
-			},
-			facebook: {
-				type: String,
-			},
-			instagram: {
-				type: String,
-			},
-		},
-	],
-	budget: {
+	typeMarket: {
 		type: String,
-		enum: [Budget.LOW, Budget.MEDIUM, Budget.HIGH],
+		enum: [TypeMarket.STREETMARKET, TypeMarket.SUPERMARKET],
 		required: true,
 	},
 	reviews: [] as IReview[],
 	rating: {
 		type: Number,
 		default: 0,
+		required: true,
+	},
+	numReviews: {
+		type: Number,
+		default: 0,
+		required: true,
 	},
 	timestamps: {
 		createdAt: {
@@ -56,4 +49,4 @@ const BusinessSchema = new Schema<IBusiness>({
 	},
 });
 
-export const BusinessModel = model<IBusiness>("Business", BusinessSchema);
+export const MarketModel = model<IMarket>("Market", MarketSchema);
