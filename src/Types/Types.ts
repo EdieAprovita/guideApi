@@ -151,7 +151,7 @@ export interface IRecipe {
 	author: Types.ObjectId;
 	description: string;
 	instructions: string;
-	ingredients: [string];
+	ingredients: string;
 	typeDish: TypeDish;
 	image: string;
 	cookingTime: number;
